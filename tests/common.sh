@@ -1,8 +1,8 @@
 #!/bin/bash
 
-CLI="python3 cli.py"
+CLI="py cli.py"
 STORE="store"
-DATASET="dataset"
+DATASET="tests/dataset"
 OUT="tests/output"
 
 PASS() { echo "[PASS] $1"; }

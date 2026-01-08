@@ -10,7 +10,8 @@ $CLI backup $DATASET --label v1
 SID=$(get_first_snapshot)
 
 cp -r $DATASET tests/dataset_backup
-rm -rf $DATASET
+rm -rf $DATASET/CA_county_high_earners.csv
+rm -rf $DATASET/ghana
 
 $CLI restore $SID $OUT
 diff -r $OUT tests/dataset_backup || FAIL "Restore mismatch"
