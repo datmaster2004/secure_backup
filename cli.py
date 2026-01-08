@@ -19,9 +19,9 @@ def main():
  
     policy = Policy("policy.yaml")
     audit = Audit(Path("store/audit.log"))
-    if cmd != "init" and not policy.allowed(user, cmd):
+    if not policy.allowed(user, cmd):
         audit.log(user, cmd, args, "DENY")
-        print("DENY")
+        print(f"DENY: user '{user}' is not allowed to run '{cmd}'")
         return
 
     store = Store("store")
